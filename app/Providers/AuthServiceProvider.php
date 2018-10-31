@@ -32,6 +32,10 @@ class AuthServiceProvider extends ServiceProvider
         //Este metodo facilita la autenticación si el usuario esta autorizado.
         Passport::enableImplicitGrant();
 
-        //
+        //Si queremos darle una tiempo de expiración, usaremos este metodo para cambiar
+        //por defecto este token nunca expira, metodos tokenExpireIn y/o refreshTokensExpireIn.
+        // Passport::tokensExpireIn(Carbon::now()->addDays(15));
+        // Passport::refreshTokensExpireIn(Carbon::now()->addDays(30));
+
     }
 }
